@@ -33,17 +33,17 @@ class SearchTests(unittest.TestCase):
     '''
         Binary Search tests
     '''
-    def test_bs_True(self):
-        self.assertTrue(binarysearch.binarysearch(self.E, 12))
+    def test_bs_index(self):
+        self.assertEqual(6, binarysearch.binarysearch(self.E, 12))
 
-    def test_bs_False(self):
-        self.assertFalse(binarysearch.binarysearch(self.E, -1))
+    def test_bs_false(self):
+        self.assertEqual(-1, binarysearch.binarysearch(self.E, -15))
 
-    def test_bs_Empty(self):
-        self.assertFalse(binarysearch.binarysearch(self.B, 12))
+    def test_bs_empty(self):
+        self.assertEqual(-1, binarysearch.binarysearch(self.B, 12))
 
-    def test_bs_Single(self):
-        self.assertTrue(binarysearch.binarysearch(self.F, 4))
+    def test_bs_single(self):
+        self.assertEqual(0, binarysearch.binarysearch(self.F, 4))
 
 if '__main__' == __name__:
     unittest.main()
