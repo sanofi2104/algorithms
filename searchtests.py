@@ -24,11 +24,11 @@ class SearchTests(unittest.TestCase):
 
     def test_ls_false(self):
         index = linearsearch.linearsearch(self.A, 0)
-        self.assertEqual(-1, index)
+        self.assertFalse(index)
 
     def test_ls_empty(self):
         index = linearsearch.linearsearch(self.B, 2)
-        self.assertEqual(-1, index)
+        self.assertFalse(index)
     
     '''
         Binary Search tests
@@ -37,10 +37,10 @@ class SearchTests(unittest.TestCase):
         self.assertEqual(6, binarysearch.binarysearch(self.E, 12))
 
     def test_bs_false(self):
-        self.assertEqual(-1, binarysearch.binarysearch(self.E, -15))
+        self.assertFalse(binarysearch.binarysearch(self.E, -15))
 
     def test_bs_empty(self):
-        self.assertEqual(-1, binarysearch.binarysearch(self.B, 12))
+        self.assertFalse(binarysearch.binarysearch(self.B, 12))
 
     def test_bs_single(self):
         self.assertEqual(0, binarysearch.binarysearch(self.F, 4))
