@@ -3,6 +3,7 @@
 import unittest
 import bubblesort
 import insertionsort
+import mergesort
 
 class SortTests(unittest.TestCase):
 
@@ -45,6 +46,27 @@ class SortTests(unittest.TestCase):
 
     def test_isort_repeat(self):
         self.assertEqual(sorted(self.D), insertionsort.insertionsort(self.D))
+
+    
+    '''
+        Merge Sort 
+    '''
+    # check merging algorithm (mergetwo function)
+    def test_msort_merge(self):
+        self.assertEqual([1,2,3,4,5], mergesort.mergetwo([2,3], [1,4,5]))
+
+    #check sorting algorithm
+    def test_msort_sort(self):
+        self.assertEqual(sorted(self.A), mergesort.mergesort(self.A))
+
+    def test_msort_empty(self):
+        self.assertFalse(mergesort.mergesort(self.C))
+
+    def test_msort_single(self):
+        self.assertEqual(self.B, mergesort.mergesort(self.B))
+
+    def test_msort_repeat(self):
+        self.assertEqual(sorted(self.D), mergesort.mergesort(self.D))
 
 
 
