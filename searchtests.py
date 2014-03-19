@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-
 import unittest
 import linearsearch
 import binarysearch 
@@ -45,5 +44,6 @@ class SearchTests(unittest.TestCase):
     def test_bs_single(self):
         self.assertEqual(0, binarysearch.binarysearch(self.F, 4))
 
+    
 if '__main__' == __name__:
     unittest.main()
