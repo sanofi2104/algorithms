@@ -1,4 +1,3 @@
-import random
 
 def merge(_left, _pivot, _right):
     _left.append(_pivot)
