@@ -2,6 +2,7 @@
 
 import unittest
 import bubblesort
+import insertionsort
 
 class SortTests(unittest.TestCase):
 
@@ -28,6 +29,23 @@ class SortTests(unittest.TestCase):
     
     def test_bsort_repeat(self):
         self.assertEqual(sorted(self.D), bubblesort.bubblesort(self.D))
+
+
+    '''
+        Insertion Sort 
+    '''
+    def test_isort_sort(self):
+        self.assertEqual(sorted(self.A), insertionsort.insertionsort(self.A))
+
+    def test_isort_empty(self):
+        self.assertFalse(insertionsort.insertionsort(self.C))
+
+    def test_isort_single(self):
+        self.assertEqual(self.B, insertionsort.insertionsort(self.B))
+
+    def test_isort_repeat(self):
+        self.assertEqual(sorted(self.D), insertionsort.insertionsort(self.D))
+
 
 
 if '__main__' == __name__:
