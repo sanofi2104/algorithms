@@ -22,11 +22,9 @@ def binarysearch(_list, _v, _min = 0, _max = None):
     else: 
 
         if _v < middle:
-            result = binarysearch(_list, _v, _min, middle_index)
+            return binarysearch(_list, _v, _min, middle_index)
         
-        else:
-            result = binarysearch(_list, _v, middle_index, _max)
-        
-        return result
+        return binarysearch(_list, _v, middle_index, _max)
+         
 
 
