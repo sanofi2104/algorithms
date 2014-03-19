@@ -4,6 +4,7 @@ import unittest
 import bubblesort
 import insertionsort
 import mergesort
+import quicksort
 
 class SortTests(unittest.TestCase):
 
@@ -69,6 +70,25 @@ class SortTests(unittest.TestCase):
         self.assertEqual(sorted(self.D), mergesort.mergesort(self.D))
 
 
+    '''
+        Quick Sort 
+    '''
+    # check merging algorithm (mergetwo function)
+    def test_qsort_merge(self):
+        self.assertEqual([2,1,3,3,4,5], quicksort.merge([2,1], 3, [3,4,5]))
+
+    #check sorting algorithm
+    def test_qsort_sort(self):
+        self.assertEqual(sorted(self.A), quicksort.quicksort(self.A))
+
+    def test_qsort_empty(self):
+        self.assertFalse(quicksort.quicksort(self.C))
+
+    def test_qsort_single(self):
+        self.assertEqual(self.B, quicksort.quicksort(self.B))
+
+    def test_qsort_repeat(self):
+        self.assertEqual(sorted(self.D), quicksort.quicksort(self.D))
 
 if '__main__' == __name__:
     unittest.main()
