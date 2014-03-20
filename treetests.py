@@ -47,7 +47,7 @@ class treetests(unittest.TestCase):
     def test_df_inorder_empty(self):
         self.assertFalse(binarytree.in_order(None))
     
-    # In-Order algorithm
+    # Post-Order algorithm
     def test_df_postorder_path(self):
         self.assertEqual(self.df_postorder_result, ''.join(binarytree.post_order(self.tree)))
     
