@@ -34,10 +34,12 @@ def breadth_first(_tree):
 Depth-first search 
 '''
 # Pre-Order depth-first searching algorithm
-def pre_order(_node, result = []):
+def pre_order(_node, result = None):
     if _node == None:
         return
-    
+    if result is None:
+        result = []
+
     result.append(_node.value)
     pre_order(_node.left, result)
     pre_order(_node.right, result)
@@ -46,9 +48,11 @@ def pre_order(_node, result = []):
 
 
 # In-Order depth-first searching algorithm
-def in_order(_node, result = []):
+def in_order(_node, result = None):
     if _node == None:
         return
+    if result is None:
+        result = []
     
     in_order(_node.left, result)
     result.append(_node.value)
@@ -58,9 +62,11 @@ def in_order(_node, result = []):
 
 
 # Post-Order depth-first searching algorithm
-def post_order(_node, result = []):
+def post_order(_node, result = None):
     if _node == None:
         return
+    if result is None:
+        result = []
     
     post_order(_node.left, result)
     post_order(_node.right, result)
