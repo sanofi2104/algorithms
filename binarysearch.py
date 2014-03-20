@@ -11,7 +11,7 @@ def binarysearch(_list, _v, _min = 0, _max = None):
     middle = _list[middle_index]
 
     if _min == _max:
-        return Flase
+        return False
 
     if _min == _max - 1:
         if _v == middle:
